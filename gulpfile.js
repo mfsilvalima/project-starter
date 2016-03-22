@@ -10,9 +10,9 @@ var plumber = require('gulp-plumber');
 
 var files = {
 	sass_watch_path: 'src/scss/**/*.scss',
-	css_path: 'build/css/',
+	css_path: 'dist/css/',
   js_watch_path: 'src/js/**/*.js',
-	js_path: 'build/js/'
+	js_path: 'dist/js/'
 };
 
 gulp.task('browserSync', function() {
@@ -24,7 +24,7 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('styles', function(){
-  gulp.src(files.sass_watch_path)
+	gulp.src(files.sass_watch_path)
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -40,7 +40,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-  return gulp.src(files.js_watch_path)
+	return gulp.src(files.js_watch_path)
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -55,10 +55,10 @@ gulp.task('scripts', function(){
 });
 
 
-gulp.task('watch', ['browserSync', 'styles', 'scripts'], function(){
-  gulp.watch(files.js_watch_path, ['styles']);
-  gulp.watch(files.scss_watch_path, ['scripts']);
-  gulp.watch('./*.html', browserSync.reload);
+gulp.task('default', ['browserSync'], function(){
+  gulp.watch("src/scss/**/*.scss", ['styles']);
+	gulp.watch("src/js/**/*.js", ['scripts']);
+	gulp.watch('./*.html', browserSync.reload);
+	gulp.watch("src/scss/**/*.scss", browserSync.reload);
+	gulp.watch("src/js/**/*.js", browserSync.reload);
 });
-
-gulp.task('default', ['watch']);
