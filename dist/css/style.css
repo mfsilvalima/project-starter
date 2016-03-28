@@ -5200,6 +5200,11 @@ button.close {
     animation-fill-mode: both; }
 
 .animated {
+  visibility: hidden; }
+  .animated.visible {
+    visibility: visible; }
+
+.animated {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
