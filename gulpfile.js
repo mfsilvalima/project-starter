@@ -7,7 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
-var imagemin = require('gulp-imagemin');
+var sprite = require('gulp-sprite');
 
 var files = {
 	sass_watch_path: 'src/scss/**/*.scss',
@@ -55,14 +55,15 @@ gulp.task('scripts', function(){
     .pipe(browserSync.reload({stream:true}))
 });
 
-gulp.task('images', function(){
-  gulp.src('src/img/**/*')
-    .pipe(imagemin({
-			optimizationLevel: 7,
-			progressive: true,
-			interlaced: true
-		}))
-    .pipe(gulp.dest('dist/img/'));
+gulp.task('sprites', function () {
+    gulp.src('src/img/icons/*.png')
+      .pipe(sprite('sprite-icon.png', {
+				prefix: '_',
+				imagePath: '../../dist/img/',
+        cssPath: 'src/scss/base/',
+        preprocessor: 'scss'
+      }))
+      .pipe(gulp.dest('dist/img/'));
 });
 
 gulp.task('default', ['browserSync'], function(){

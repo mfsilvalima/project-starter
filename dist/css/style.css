@@ -7841,3 +7841,28 @@ button.close {
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
+
+.icon {
+  padding: 0;
+  margin-top: 0;
+  display: inline-block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  overflow: hidden;
+  border: none;
+  line-height: normal;
+  vertical-align: middle;
+  text-indent: -99999px; }
+
+.icon-html5 {
+  background-image: url(../../dist/img/sprite-icon.png);
+  background-position: -5px -215px;
+  width: 256px;
+  height: 256px; }
+
+.icon-gulp {
+  background-image: url(../../dist/img/sprite-icon.png);
+  background-position: -5px -5px;
+  width: 89px;
+  height: 200px; }

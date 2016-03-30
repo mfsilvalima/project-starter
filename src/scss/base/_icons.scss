@@ -1,0 +1,23 @@
+@import "sprite-icon";
+
+.icon{
+    padding: 0;
+    margin-top: 0;
+    display: inline-block;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    overflow: hidden;
+    border: none;
+    line-height: normal;
+    vertical-align: middle;
+    text-indent: -99999px;
+}
+
+.icon-html5{
+	@include sprite($icon-html5);
+}
+
+.icon-gulp{
+	@include sprite($icon-gulp);
+}
