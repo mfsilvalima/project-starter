@@ -6,23 +6,23 @@ Project starter for front-end development.
 
 ## Get started
 
-1. Install Gulp globally (if you do not have):
+1- Install Gulp globally (if you do not have):
 ```
 sudo npm install -g gulp
 ```
-2. Install Slush globally (if you do not have):
+2- Install Slush globally (if you do not have):
 ```
 sudo npm install -g slush
 ```
-3. Install the Project starter also globally:
+3- Install the Project starter also globally:
 ```
 sudo npm install -g slush-project-starter
 ```
-4. Now, create and enter in a new folder for your project:
+4- Now, create and enter in a new folder for your project:
 ```
 mkdir my-project && cd my-project
 ```
-5. To end, generate/scaffolding your project using project-starter:
+5- To end, generate/scaffolding your project using project-starter:
 ```
 slush project-starter
 ```
